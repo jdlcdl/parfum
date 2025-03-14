@@ -28,7 +28,7 @@ Note: The sample python sessions below have been done on `signet`, a bitcoin tes
 ## Secrets
 
 **BIP-39 mnemonic**: `auction crucial trend safe faith barrel orbit roast source stereo discover cart`
-![07fd816d-mnemonic](https://gist.github.com/user-attachments/assets/54f9fca0-4df9-460c-8657-55bbe75fad13)
+![07fd816d-mnemonic](07fd816d-mnemonic.png)
 
 
 **BIP-39 passphrase**: ""
@@ -52,7 +52,7 @@ tpubDDTaJCQYtwr9j9oFyNgnvy85MbkqxtdELw5YWLnfzm1EDc5Y1mDKLbrthDJjpdTowjL8K74Kno5s
 ```
 [07fd816d/84'/1'/0']tpubDDTaJCQYtwr9j9oFyNgnvy85MbkqxtdELw5YWLnfzm1EDc5Y1mDKLbrthDJjpdTowjL8K74Kno5sFiyu1nJHgZymBGWrQRXnfaw76vKYt7G
 ```
-![07fd816d-natsw-xpub](https://gist.github.com/user-attachments/assets/6d7eb072-e1c6-4021-b1ba-3fcb2ed1683f)
+![07fd816d-natsw-xpub](07fd816d-natsw-xpub.png)
 
 ---
 

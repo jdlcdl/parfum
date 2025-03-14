@@ -51,7 +51,7 @@ We'll be using multiple labels for our secrets and keys because we're aware that
 
 **BIP-39 passphrase**: ""
 
-![secrets-exp-multi](https://gist.github.com/user-attachments/assets/7879acda-0c0f-4514-9705-b34fbb359f22)
+![secrets-exp-multi-wsh](secrets-exp-multi-wsh.png)
 
 
 ---

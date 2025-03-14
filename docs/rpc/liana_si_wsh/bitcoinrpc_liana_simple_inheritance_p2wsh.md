@@ -41,7 +41,7 @@ Note: The sample python sessions below have been done on `signet`, a bitcoin tes
 
 **BIP-39 passphrase**: ""
 
-![secrets-pri-rec](https://gist.github.com/user-attachments/assets/9c34bfd7-2a44-482b-8c92-5340a846ccbf)
+![secrets-pri-rec](secrets-pri-rec.png)
 
 
 ---

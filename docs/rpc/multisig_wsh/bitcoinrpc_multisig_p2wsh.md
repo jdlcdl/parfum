@@ -30,7 +30,7 @@ Note: The sample python sessions below have been done on `signet`, a bitcoin tes
 * **A**: `auction crucial trend safe faith barrel orbit roast source stereo discover cart`
 * **B**: `orange enter age rug chef denial legend topic identify sign always mother`
 * **C**: `news lecture under adapt inspire chunk tongue fun party build defense receive`
-![secrets-2of3](https://gist.github.com/user-attachments/assets/9a36564b-57d0-4f12-9012-36a45c6ee33a)
+![secrets-2of3](secrets-2of3.png)
 
 
 **BIP-39 passphrases**: ""
@@ -108,7 +108,7 @@ Using the xpub as a basis to the descriptor,
 >>> print(repr(descriptor))
 "wsh(sortedmulti(2,[07fd816d/48'/1'/0'/2']tpubDDvFWduSiwhW7hUbL1oMyUfcNgeSyZgHbooe1WjHyRaXYH3uUjm1xdxWXAGbQFn8QGScDg4b4a6WMGNiEAq2uQdmPDhDKPE5Dr8DX24mwd5/<0;1>/*,[da855a1f/48h/1h/0h/2h]tpubDEHRt73d4guqR5BLGQud4XMW8vDCGHUj54qDTFtsdFstF6PAYx1oAy3jfKg1PffqLUWuSsXmnetKeTJFKfKLXeJR97yUuqvvojnoBcUDHg5/<0;1>/*,[cdef7cd9/48'/1'/0'/2']tpubDEzdWp7365AFAExeUsHiwRmkZN5it3sSAZsd6GKUXvUiJBytXnZrRKMAt9UgCkWB2mP3K9WujLuTjrRLBn51Y18pMVyg2v18un4ivqWSAk2/<0;1>/*))#2n8mk54n"
 ```
-![descriptor-2of3](https://gist.github.com/user-attachments/assets/284ff092-6f7c-4568-b539-1a11c66707a0)
+![descriptor-2of3](descriptor-2of3.png)
 
 
 Note: `sortedmulti()` has a first paramater of `2` for this `2-of-3` multisig, followed by all 3 xpubs.  Sorted multi means that these xpubs may be presented in any order and that derived pubkeys will always be presented in a deterministic `sorted` order within bitcoin script.  That is, we could re-create another descriptor, presenting the xpubs ordered like `B,C,A` or any other order and we'd still be restoring the same wallet with the same addresses.  If however, we had used `multi()` instead, then we could NOT restore the same wallet without presenting the xpubs in same order as orginal; any different order would be a completely different wallet with its own addresses.

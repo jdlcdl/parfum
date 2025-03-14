@@ -94,9 +94,9 @@ J:  [001ceab0/84h/1h/3h]tpubDCuJUyHrMq4PY4fXEHyADTkFwgy498AnuhrhFzgT7tWuuwp9JAeo
 Bip32 master Extended Private Keys can be created in an air-gapped manner, then their Extended Public Keys can be exported.
 
 Below, Secondary Agent's master Key D has previously been created and loaded into krux.  We will customize for `testnet`, `miniscript`, and `native segwit` on a custom `derivation path`, then prepare to export the Extended Public Key -- as text to be written down-by hand, saved on the sdcard, or expressed as a QR-Code for scanning:
-![WatchOnlyKeyExportD1](https://gist.github.com/user-attachments/assets/f21e7876-cce5-4570-be47-b89b75b63d17)
-![WatchOnlyKeyExportD2](https://gist.github.com/user-attachments/assets/9e25b016-e883-4424-bf96-fca892c8092b)
-![WatchOnlyKeyExportD3](https://gist.github.com/user-attachments/assets/b0ba0dce-a300-432a-aa4b-762f44fef71c)
+![WatchOnlyKeyExportD1](WatchOnlyKeyExportD1.png)
+![WatchOnlyKeyExportD2](WatchOnlyKeyExportD2.png)
+![WatchOnlyKeyExportD3](WatchOnlyKeyExportD3.png)
 
 
 ## 2025 epochs (and blockheight events)
@@ -224,9 +224,9 @@ Putting it all together, and remembering that `andor()` implies "(X and Y) or Z"
 
 As an example, we'll assume that the Secondary Agent's Key D were loaded and setup in krux as seen above.  The Wallet Output Descriptor can then be loaded for inspection -- via qrcode or from a `.txt` file on the sdcard.  Besides viewing the Miniscript, loading a Wallet Descriptor enables verification of addresses, viewing of address listings, and is highly recommended for verification of self-transfers and change during PSBT signing.
 
-![load_descriptor1](https://gist.github.com/user-attachments/assets/a56c1947-d2b7-4518-bfaa-1cc4c1e951d4)
-![load_descriptor2](https://gist.github.com/user-attachments/assets/3bf442da-6b56-494c-812f-2270a144a2c6)
-![load_descriptor3](https://gist.github.com/user-attachments/assets/44a07b34-0b14-4d82-82f9-603776d4f286)
+![load_descriptor1](load_descriptor1.png)
+![load_descriptor2](load_descriptor2.png)
+![load_descriptor3](load_descriptor3.png)
 
 ---
 
@@ -375,13 +375,13 @@ This wallet is now created watch-only in bitcoin core, so we'll take a moment fo
 
 In krux, without even loading any secrets, we can load the same "trusted" wallet Output Descriptor that we used to create the bitcoin core wallet above -- by scanning the Descriptor QR-Code or by loading it from sdcard, so that we can verify.  Once loaded, we'll be able to review the Keys and Policy just as we did previously for Secondary Agent Key D.
 
-![WalletSansKey1](https://gist.github.com/user-attachments/assets/94255fe2-fe7d-46f1-8227-7c69ba381c66)
+![WalletSansKey1](WalletSansKey1.png)
 
 Then we'll be offered options to scan an address QR-Code, or to view lists of `remint-005`'s receive and change addresses.
 Below, we'll do so in order to verify the first twelve receive and change addresses that we listed when setting up the bitcoin core watch-only wallet above.
 
-![WalletSansKey2](https://gist.github.com/user-attachments/assets/3f7346a6-cf0b-417e-9a64-53779f382a4d)
-![WalletSansKey3](https://gist.github.com/user-attachments/assets/4455aa06-c1e9-45ab-bcdd-b79243486522)
+![WalletSansKey2](WalletSansKey2.png)
+![WalletSansKey3](WalletSansKey3.png)
 
 
 Verified and backed up, this wallet is now ready for use.  Thanks to faucets: [Signet Faucet](https://signetfaucet.com/) and [Alt Signet Faucet](https://signet25.bublina.eu.org/), the first three receive addresses were funded on January 2nd 2025.
@@ -537,9 +537,9 @@ psbt_unsigned="cHNidP8BAH0CAAAAAZz6SpVfHh35H4rID9flZ0AEpkN4asBBDi21gc09CXpnAQAAA
 We'll acquire partially-signed PSBTs by cutting the unsigned PSBT from above, pasting into SeedQReader, scanning and signing with krux, then scanning the partially-signed PSBT from krux into SeedQReader.  After each additional signature, we'll update our environment with a new partially signed PSBT variable. Once done, we'll combine them all, finalize and publish.
 
 Below, Principal's master Extended Private key E was loaded into krux.  We customized it for `testnet`, `miniscript`, and `native segwit` to a defaulted derivation path of `m/48'/1'/0'/2'` (matching E's entry in the descriptor), then the `remint-005` descriptor was loaded (as verification that krux was properly setup, and enabling better verification of a matching PSBT).
-![sign_psbtE1](https://gist.github.com/user-attachments/assets/d7eed107-c405-4138-92ad-bfb288e6eaa7)
-![sign_psbtE2](https://gist.github.com/user-attachments/assets/0a6065c7-9d93-40fc-8d7f-a087aaf583b5)
-![sign_psbtE3](https://gist.github.com/user-attachments/assets/847bab0d-ea72-4684-9147-5f61afc866a7)
+![sign_psbtE1](sign_psbtE1.png)
+![sign_psbtE2](sign_psbtE2.png)
+![sign_psbtE3](sign_psbtE3.png)
 
 <details><summary>Bitcoin Core -- command line interface</summary>
 <p>
@@ -860,14 +860,14 @@ bitcoin-cli sendrawtransaction $txhex
 Three transactions, one each for the second, third and fourth epochs, have been created, updated, signed, and combined on January 5th 2025, well prior to blockheights where any of them would be considered "complete".  Because we intend to finalize each combined PSBT, extract and broadcast it -- unaltered -- once each epoch blockheight has been mined, we have published an inconclusive commitment hinting to their transaction IDs on signet.
 
 #### This commitment is FUBAR -- because I forgot to set locktime >= `<EPOCH-block-height>`
-![fubar-commit](https://gist.github.com/user-attachments/assets/fcab11e0-9c05-4a08-a526-9e1a929bac1b)
+![remint-005-commit-fubar](remint-005-commit-fubar.png)
 
 [Committing to "not yet" is FUBAR, mined 6:25pm, on January 5th 2025](https://mempool.space/signet/tx/a6ed9d290adcecd33be48996f89d53d4ffef35dace9ae19a180164a898cfa4e6)
 
 #### So, Let't commit again -- w/ corrected pre-signed non-final transactions
 On January 8th 2025, the same three transactions were re-created, this time with locktime = `<EPOCH-block-height +3>`.
 
-![PSBTOpReturnView_text](https://gist.github.com/user-attachments/assets/a496ec13-8ecd-4aa9-a641-2ef7828ee12e)
+![remint-005-commit](remint-005-commit.png)
   
 [ReCommitting to "not yet", mined 8:47pm on January 8th 2025](https://mempool.space/signet/tx/9cfeece131e843dca6aa1df07e59aed9e10666b03811498b2e72efb7786f1eb0)
 

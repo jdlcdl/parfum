@@ -51,7 +51,7 @@ We'll be using "less than obvious" labels for our secrets and keys because we're
 
 **BIP-39 passphrase**: ""
 
-![secrets-exp-multi-tr](https://gist.github.com/user-attachments/assets/460fff17-36a0-42ac-a1a6-eadcfbc8de81)
+![secrets-exp-multi-tr](secrets-exp-multi-tr.png)
 
 ---
 
