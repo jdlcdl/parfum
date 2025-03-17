@@ -1,4 +1,4 @@
-## parfum - Programming Awesomely Rare F.U. Money
+# parfum - Programming Awesomely-Rare <span title="Fabulously-Unique">FU</span> Money
     "Smells much nicer than filthy fiat."
 
 
